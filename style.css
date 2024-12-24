@@ -1,0 +1,17 @@
+.red{
+    color: red;
+    background-color: burlywood;
+    padding: 5px;
+}
+
+.roboto-regular {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .square{
+    border: solid 2px black;
+    width: 100px;
+    height: 100px;
+  }
