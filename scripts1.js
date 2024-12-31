@@ -7,7 +7,6 @@ const square = document.getElementById("square1");
 
 const itemsGrid = document.getElementById("items-grid");
 
-
 function changeColor(){
     console.log("change color");
 
@@ -41,6 +40,8 @@ function initPage2(){
         console.log("got those products: ", res);
         data = res;
         fillItems();
+        fillwithmap();
+
         
     }).catch(er=>{
         console.log("error happened ", er);
@@ -48,6 +49,16 @@ function initPage2(){
     })
 }
 
+function fillwithmap(){
+    const simpleList = document.getElementById("simple-list");
+    const str = data.products.map(item =>{
+
+        return `<li>${item.title}, ${item.price}, ${item.description.substring(10)}...</li>`;
+        })
+
+        simpleList.appendChild(str);
+        
+}
 function fillItems(){
      
 
@@ -68,9 +79,9 @@ function fillItems(){
         img.setAttribute("style", "width: 100px");
 
 
-        brand.innerHTML = itemData.brand;
+        brand.innerHTML = itemData.brand ? itemData.brand : "n/a";
         title.innerHTML = itemData.title;
-        desctiption.innerHTML = itemData.desctiption;
+        desctiption.innerHTML = itemData.description;
         price.innerHTML = itemData.price;
 
         item.appendChild(title);

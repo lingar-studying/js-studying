@@ -27,13 +27,13 @@
   }
 
   #items-grid{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* max-width: 90vw; */
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 1700px;
+    /* height: 1700px; */
 
   }
