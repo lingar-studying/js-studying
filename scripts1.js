@@ -4,6 +4,10 @@ const input1 = document.getElementById("inputSizeChange");
 let data = null;
 const square = document.getElementById("square1");
 
+
+const itemsGrid = document.getElementById("items-grid");
+
+
 function changeColor(){
     console.log("change color");
 
@@ -36,9 +40,49 @@ function initPage2(){
     getProducts().then(res=>{
         console.log("got those products: ", res);
         data = res;
+        fillItems();
         
     }).catch(er=>{
         console.log("error happened ", er);
         
     })
+}
+
+function fillItems(){
+     
+
+    for(let i = 0; i < data.products.length; i++){
+
+
+        const itemData = data.products[i];
+
+        const item = document.createElement("div");
+        item.setAttribute("class", "item1");
+        const title = document.createElement("h3");
+        const brand = document.createElement("h4");
+        const desctiption = document.createElement("p");
+        const price = document.createElement("p");
+        const img = document.createElement("img");
+        img.setAttribute("src", itemData.images[0]);
+        img.setAttribute("alt", itemData.title);
+        img.setAttribute("style", "width: 100px");
+
+
+        brand.innerHTML = itemData.brand;
+        title.innerHTML = itemData.title;
+        desctiption.innerHTML = itemData.desctiption;
+        price.innerHTML = itemData.price;
+
+        item.appendChild(title);
+        item.appendChild(brand);
+        item.appendChild(desctiption);
+        item.appendChild(price);
+        item.appendChild(img);
+
+
+
+        //adding to the div 
+        itemsGrid.appendChild(item);
+
+    }
 }

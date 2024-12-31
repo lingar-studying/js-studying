@@ -18,3 +18,9 @@
   body{
     padding: 50px;
   }
+  .item1{
+    padding: 10px;
+    border: 2px red solid; 
+    width: 20%;
+    margin-bottom: 15px;
+  }
