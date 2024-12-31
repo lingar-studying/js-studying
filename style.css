@@ -20,7 +20,20 @@
   }
   .item1{
     padding: 10px;
+    /* margin-right: 5px; */
     border: 2px red solid; 
-    width: 20%;
+    width: 200px;
     margin-bottom: 15px;
+  }
+
+  #items-grid{
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    /* max-width: 90vw; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 1700px;
+
   }
